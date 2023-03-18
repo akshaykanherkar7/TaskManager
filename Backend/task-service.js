@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user-manager", userRoutes);
-app.use("task-manager", Authentication, taskRoutes);
+app.use("/task-manager", Authentication, taskRoutes);
 
 app.listen(process.env.PORT, async () => {
   try {

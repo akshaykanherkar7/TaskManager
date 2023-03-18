@@ -7,7 +7,7 @@ const Authentication = async (req, res, next) => {
     return res.status(403).send({ message: "Authentication required" });
   }
 
-  await jwt.verify(user_token, process.env.JWR_SECRET, async (err, decoded) => {
+  await jwt.verify(user_token, process.env.JWT_SECRET, async (err, decoded) => {
     if (err) {
       return res.status(err).send({ message: "Authentication faild" });
     }
